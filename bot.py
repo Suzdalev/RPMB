@@ -51,4 +51,4 @@ def restart():
     print("sys.executable was", sys.executable)
     print("restart now")
     import os
-    os.execv(sys.executable, ['python3'] + sys.argv)
+    os.execv(sys.executable, ['python3.5'] + sys.argv)
