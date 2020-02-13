@@ -2,14 +2,10 @@ import time
 import config
 import telebot
 import praw
-import urllib
-import requests
+
 try:
 
-
     bot = telebot.TeleBot(config.tg_token)
-
-
 
     reddit = praw.Reddit(client_id=config.client_id,
                          client_secret=config.client_secret,
@@ -18,8 +14,8 @@ try:
     already_posted_list = []
     gonna_post_list = []
     incoming_list = []
-    temp_counter = 0
-    while(temp_counter < 10):
+
+    while (true):
         gonna_post_list.clear()
         incoming_list = reddit.subreddit('memes').hot(limit=10)
         print("Incoming list: ")
@@ -30,7 +26,7 @@ try:
                 if old.name == new.name:
                     flag = 1
                     print("OLD POST! " + old.name)
-            if flag==0:
+            if flag == 0:
                 gonna_post_list.append(new)
 
         for fresh_image in gonna_post_list:
@@ -40,10 +36,11 @@ try:
 
         if len(already_posted_list) > 100:
             del already_posted_list[20:]
-        time.sleep(60)
+        time.sleep(3600)
 
 except Exception as ex:
     restart()
+
 
 def restart():
     import sys
