@@ -12,7 +12,7 @@
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
-config.py
+/config.py
 # Generated files
 .idea/**/contentModel.xml
 
