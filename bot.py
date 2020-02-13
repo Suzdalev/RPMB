@@ -15,7 +15,7 @@ try:
     gonna_post_list = []
     incoming_list = []
 
-    while (true):
+    while (1):
         gonna_post_list.clear()
         incoming_list = reddit.subreddit('memes').hot(limit=5)
         for new in incoming_list:
@@ -46,4 +46,4 @@ def restart():
     print("sys.executable was", sys.executable)
     print("restart now")
     import os
-    os.execv(sys.executable, ['python3.5'] + sys.argv)
+    os.execv(sys.executable, ['python3.6'] + sys.argv)
