@@ -17,10 +17,8 @@ try:
 
     while (true):
         gonna_post_list.clear()
-        incoming_list = reddit.subreddit('memes').hot(limit=10)
-        print("Incoming list: ")
-        print(incoming_list)
-        for new in reddit.subreddit('memes').hot(limit=10):
+        incoming_list = reddit.subreddit('memes').hot(limit=5)
+        for new in incoming_list:
             flag = 0
             for old in already_posted_list:
                 if old.name == new.name:
