@@ -23,7 +23,7 @@ try:
             for old in already_posted_list:
                 if old.name == new.name:
                     flag = 1
-                    print("OLD POST! " + old.name)
+                    #print("OLD POST! " + old.name)
             if flag == 0:
                 gonna_post_list.append(new)
 
