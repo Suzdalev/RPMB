@@ -17,7 +17,7 @@ try:
 
     while (1):
         gonna_post_list.clear()
-        incoming_list = reddit.subreddit('memes').hot(limit=5)
+        incoming_list = reddit.subreddit('memes').hot(limit=8)
         for new in incoming_list:
             flag = 0
             for old in already_posted_list:
@@ -33,8 +33,8 @@ try:
         gonna_post_list.clear()
 
         if len(already_posted_list) > 100:
-            del already_posted_list[20:]
-        time.sleep(3600)
+            del already_posted_list[:30]
+        time.sleep(1800)
 
 except Exception as ex:
     restart()
